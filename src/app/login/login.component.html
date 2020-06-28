@@ -1,0 +1,18 @@
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+    <mat-card fxFlex="25">
+        <mat-toolbar color="primary">Authentification</mat-toolbar>
+        <form [formGroup]="loginForm" fxLayoutAlign="stretch" fxLayout="column" class="login-form" (ngSubmit)="login()" novalidate>
+            <mat-form-field>
+              <input matInput placeholder="email" formControlName="email" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="password" placeholder="Password" formControlName="password" required>
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit">S'authentifier</button>
+            <button mat-stroked-button color="primary" >S'inscrire</button>
+
+        </form>
+
+    </mat-card>
+</div>
