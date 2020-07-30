@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,14 +25,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { PapierComponent } from './papier/papier.component';
 
+import { AuthGuard } from './auth.guard'
+import { TokenInterceptorService } from './token-interceptor.service'
+import { AuthService } from './auth.service'
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    PapierComponent
   ],
   imports: [
     BrowserModule,
@@ -54,8 +59,13 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule
-    ],
-  providers: [],
+  ],
+  providers: [AuthService, AuthGuard,
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

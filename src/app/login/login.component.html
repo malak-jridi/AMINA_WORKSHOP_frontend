@@ -3,14 +3,14 @@
         <mat-toolbar color="primary">Authentification</mat-toolbar>
         <form [formGroup]="loginForm" fxLayoutAlign="stretch" fxLayout="column" class="login-form" (ngSubmit)="login()" novalidate>
             <mat-form-field>
-              <input matInput placeholder="email" formControlName="email" required>
+              <input matInput placeholder="email" formControlName="username" required>
             </mat-form-field>
 
             <mat-form-field>
                 <input matInput type="password" placeholder="Password" formControlName="password" required>
             </mat-form-field>
             <button mat-raised-button color="primary" type="submit">S'authentifier</button>
-            <button routerLink="/register" class="btn btn-link" style="margin-left: 297px; margin-top: 20px">S'inscrire</button>
+            <button routerLink="/register" class="btn btn-link">S'inscrire</button>
 
         </form>
 

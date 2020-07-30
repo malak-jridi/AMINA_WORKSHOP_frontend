@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-itemscenter pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Papiers soumis</h1>
+    <a routerLink="/register-student" class="btn btn-success" *ngIf="hideWhenNoStudent">
+        <i class="fas fa-plus custom-fa-plus"></i>Soumettre Papier
+    </a>
+</div>
+<div class="pricing-header mx-auto">
+<!-- No data shows when their is no student data available -->
+    <div class="no-data text-center" *ngIf="noData">
+        <img src="" class="nodata-msg" alt="No student">
+            <p class="nodata-msg">Pas de papier soumi</p>
+            <a routerLink="/register-student" class="btn btn-success">
+                <i class="fas fa-plus custom-fa-plus"></i>
+                Soumettre Papier
+            </a>
+    </div>
+        <!-- Showing students data -->
+    <div class="table-responsive" *ngIf="hideWhenNoStudent">
+        <table class="table table-bordered table-responsive-sm table-responsive-md tableresponsive-lg">
+          <thead>
+            <tr>
+              <th scope="col">Titre</th>
+              <th scope="col">Description</th>
+              <th scope="col"></th>
+              <th class="text-center" scope="col">Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+          <!-- *ngFor loop iterates over Student array and fetch the student's data -->
+            <tr *ngFor="let student of Student ; let i = index;">
+              <th scope="row">{{student.$key}}</th>
+              <td>{{student.firstName}} {{student.lastName}}</td>
+              <td>{{student.email}}</td>
+              <td>{{student.mobileNumber}}</td>
+              <td class="text-center action-block">
+                <i class="far fa-edit" routerLink="/edit-student/{{student.$key}}"></i>
+                <i class="far fa-trash-alt" (click)="deleteStudent(student)"></i></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>

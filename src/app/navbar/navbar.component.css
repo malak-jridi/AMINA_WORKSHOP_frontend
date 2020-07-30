@@ -24,7 +24,7 @@ a{
 }
 
 .navbar{
-  background: #fff;
+  background: white;
   width: 100%;
   height: 60px;
   padding: 0 25px;
@@ -173,6 +173,7 @@ a{
 .navbar .navbar_right .profile .icon_wrap{
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 
 .navbar .navbar_right .profile .name{
@@ -185,7 +186,7 @@ a{
 .navbar .navbar_right .notifications.active .icon_wrap{
   color: #3b80f9;
 }
- 
+
 .navbar .profile .profile_dd{
   width: 225px;
 }
