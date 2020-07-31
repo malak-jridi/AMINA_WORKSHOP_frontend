@@ -19,7 +19,7 @@
 
                 <label id="example-radio-group-label">Sexe</label>
                 <mat-radio-group aria-label="Select an option" formControlName="sexe" >
-                    <mat-radio-button value="homme">Homme</mat-radio-button>
+                    <mat-radio-button value="homme">Homme</mat-radio-button>&nbsp;
                     <mat-radio-button value="femme">Femme</mat-radio-button>
                 </mat-radio-group>
 
@@ -28,10 +28,14 @@
                 </mat-form-field>
 
                 <mat-form-field>
-                    <input matInput type="password" placeholder="Password" formControlName="password" required>
+                    <input matInput type="password" placeholder="Mot de passe" formControlName="password" required>
                 </mat-form-field>
-                <button mat-raised-button color="primary" type="submit">S'inscrire</button>
-                <button routerLink="/login" class="btn btn-link">S'authentifier</button>
+
+                <mat-form-field>
+                    <input matInput type="password" placeholder="Confirmez mot de passe" formControlName="password" required>
+                </mat-form-field>
+                <button mat-raised-button color="primary" type="submit" class="mb-2">S'inscrire</button>
+                <button routerLink="/login" class="button-secondry">S'authentifier</button>
 
             </form>
 
