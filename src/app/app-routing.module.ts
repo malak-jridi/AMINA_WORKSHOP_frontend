@@ -4,15 +4,16 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { AddPapierComponent } from './add-papier/add-papier.component'
 import { AuthGuard } from './auth.guard'
 
 
 const routes: Routes = [
-  { path: 'login',         component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'navbarTest',
-    component: NavbarComponent,
-    canActivate: [ AuthGuard ]
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login',            component: LoginComponent },
+  { path: 'register',         component: RegisterComponent },
+  { path: 'add-papier',       component:    AddPapierComponent, canActivate: [ AuthGuard ]},
+  { path: 'navbarTest',       component: NavbarComponent, canActivate: [ AuthGuard ]
 }
 ];
 

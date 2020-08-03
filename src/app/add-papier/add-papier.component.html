@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+
+<!-- Student form -->
+<form [formGroup]="papierForm" (ngSubmit)="sendPapier()" novalidate style="margin-top: -500px; margin-left: 20px;">
+  <div class="row">
+    <div class="col-lg-5 col-md-12 col-sm-12">
+      <div class="row">
+        <div class="col-md-12 mb-3">
+          <label>Titre</label>
+          <input type="text" formControlName="titre" class="form-control" required>
+          <!-- Showing errors using getter method 
+          <p *ngIf="titre.touched && titre.invalid" class="error"><sup>*</sup>Please enter atleast first name</p>
+          <p *ngIf="titre.errors?.minlength" class="error"><sup>*</sup>Name shouldn't be less than 2 words</p>
+       --> </div>
+        <div class="col-md-12 mb-3">
+          <label>Description</label>
+          <input type="text" formControlName="description" class="form-control">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 mb-3">
+          <label>Fichier pdf</label>
+          <br>
+          <input type="file" id="userFile">
+          <br>
+          <button type="submit" class="btn btnsuccess">Ajouter papier</button>
+
+        </div>
+      </div>
+
+      </div>
+    </div>
+</form>

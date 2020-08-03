@@ -1,12 +1,15 @@
 import { baseUrl } from './../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { Observable,BehaviorSubject } from 'rxjs';
+import { tap, map, catchError } from 'rxjs/operators';
+import { User } from './user.model'
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private currentUserSubject: BehaviorSubject<User>;
+  public currentUser: Observable<User>;
 
   constructor( private http: HttpClient ) { }
 
@@ -21,7 +24,6 @@ export class AuthService {
       localStorage.setItem('access_token', res.token);
     }))
   }
-
 
   logout() {
     localStorage.removeItem('access_token')

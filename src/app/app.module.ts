@@ -29,7 +29,8 @@ import { PapierComponent } from './papier/papier.component';
 
 import { AuthGuard } from './auth.guard'
 import { TokenInterceptorService } from './token-interceptor.service'
-import { AuthService } from './auth.service'
+import { AuthService } from './auth.service';
+import { AddPapierComponent } from './add-papier/add-papier.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { AuthService } from './auth.service'
     RegisterComponent,
     NavbarComponent,
     SidebarComponent,
-    PapierComponent
+    PapierComponent,
+    AddPapierComponent
   ],
   imports: [
     BrowserModule,
