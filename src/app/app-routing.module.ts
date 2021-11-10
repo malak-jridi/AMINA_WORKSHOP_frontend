@@ -12,8 +12,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login',            component: LoginComponent },
   { path: 'register',         component: RegisterComponent },
-  { path: 'add-papier',       component:    AddPapierComponent, canActivate: [ AuthGuard ]},
-  { path: 'navbarTest',       component: NavbarComponent, canActivate: [ AuthGuard ]
+  { path: 'add-papier',       component:    AddPapierComponent /*, canActivate: [ AuthGuard ] */ },
+  { path: 'navbarTest',       component: NavbarComponent //canActivate: [ AuthGuard ]
 }
 ];
 

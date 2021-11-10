@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit {
       password: new FormControl('', [ Validators.required, Validators.minLength(5)])
     })
   }
-  login(){
+  
+  /*login(){
     if( this.loginForm.valid ){
       this.authService.login( this.loginForm.value.username, this.loginForm.value.password )
       .subscribe(
@@ -32,6 +33,17 @@ export class LoginComponent implements OnInit {
         err => console.log(err)
       )
     }
+  }*/
+  login(){
+    debugger
+
+    if( this.loginForm.valid ){
+      if(this.loginForm.value.username === "malak@live.fr" && this.loginForm.value.password === "12345678"){
+        debugger
+        this.router.navigateByUrl('navbarTest')
+
+    }
+  }
   }
 
 

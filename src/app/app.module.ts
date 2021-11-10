@@ -61,12 +61,12 @@ import { AddPapierComponent } from './add-papier/add-papier.component';
     MatDatepickerModule,
     MatNativeDateModule
   ],
-  providers: [AuthService, AuthGuard,
+ /* providers: [AuthService, AuthGuard,
   {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true
-  }],
+  }],*/
   bootstrap: [AppComponent]
 })
 export class AppModule { }
